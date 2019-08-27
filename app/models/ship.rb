@@ -1,19 +1,21 @@
+
 class Ship
-  # belongs_to :pirate
-  attr_accessor :name, :type, :booty
-  
-  def initialize(name, type, booty)
-    @name = name
-    @type = type
-    @booty = booty
+  attr_reader :name, :type, :booty
+
+  @@ships = []
+
+  def initialize(args)
+    @name = args[:name]
+    @type = args[:type]
+    @booty = args[:booty]
+    @@ships << self
   end
-  
+
   def self.all
-    return Ship.all
+    @@ships
   end
-  
+
   def self.clear
-    Ship.destroy_all()
+    @@ships = []
   end
-  
 end

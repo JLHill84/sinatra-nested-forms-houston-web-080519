@@ -8,7 +8,7 @@ module FormsLab
       erb(:root)
     end
     
-    get('/new')
+    get('/new') do
       erb(:new)
     end
 
